@@ -11,24 +11,12 @@ const initialState = {
 };
 
 export function spotifyReducer(state=initialState, action) {
+    // Handle these sync actions
     if (action.type === SEARCH_ARTISTS_REQUEST) {
-        return Object.assign({}, state, {
-            loading: true,
-            error: null
-        });
     }
     else if (action.type === SEARCH_ARTISTS_SUCCESS) {
-        return Object.assign({}, state, {
-            artists: action.artists,
-            loading: false,
-            error: null
-        });
     }
     else if (action.type === SEARCH_ARTISTS_ERROR) {
-        return Object.assign({}, state, {
-            error: action.error,
-            loading: false
-        });
     }
     return state;
 }
